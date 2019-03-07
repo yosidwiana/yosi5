@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('kategori', function () {
+    return "hello user with id";
 });
+Route::resource('kategori', 'KategoriController')->except(['destroy']);
+Route::get('/lihatdata', 'crud@index')->name('lihatdata');
