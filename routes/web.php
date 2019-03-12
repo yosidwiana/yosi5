@@ -16,3 +16,15 @@ Route::get('kategori', function () {
 });
 Route::resource('kategori', 'KategoriController')->except(['destroy']);
 Route::get('/lihatdata', 'crud@index')->name('lihatdata');
+
+Route::get('master', function () {
+    return view('layouts.master');
+});
+
+Route::get('sidebar', function () {
+    return view('layouts.sidebar');
+});
+
+Route::get('dashboard', function () {
+    return view('dashboard.index');
+});
