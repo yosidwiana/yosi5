@@ -11,20 +11,20 @@
 </head>
 <body style="background-color:skyblue">
 <div>
-    @include('layouts.sidebar')
+    
 
     <form>
     <table style="width:100%" >
     <tr>
-            <th> SIDEBAR </th>
-            <th> CONTENT </th>
+            <th> @include('layouts.sidebar') </th>
+            <th> @yield('content') </th>
         </tr>
     </table>
 </form>
 </div>
     
 <div class="container">
-    @yield('content') <!-- content ini nama yield -->
+     <!-- content ini nama yield -->
 </div>
 </body>
 </html>
