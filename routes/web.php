@@ -14,11 +14,13 @@
 Route::get('kategori', function () {
     return "hello user with id";
 });
-Route::resource('kategori', 'KategoriController')->except(['destroy']);
+Route::resource('category', 'index2Controller')->except(['destroy']);
+
+
 Route::get('/lihatdata', 'crud@index')->name('lihatdata');
 
 Route::get('master', function () {
-    return view('layouts.master');
+    return view('dashboard.dashboard');
 });
 
 Route::get('sidebar', function () {
@@ -32,3 +34,4 @@ Route::get('dashboard', function () {
 Route::get('dashboard2', function () {
     return view('dashboard.dashboard');
 });
+
