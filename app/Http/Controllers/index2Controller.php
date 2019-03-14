@@ -34,6 +34,7 @@ class index2Controller extends Controller
     public function create()
     {
         //
+        return view('create');
     }
 
     /**
@@ -45,6 +46,13 @@ class index2Controller extends Controller
     public function store(Request $request)
     {
         //
+        DB::table('kategori')->insert([
+            'nama_kategory' => $request->nama_kategory,
+            'slug' => $request->slug,
+            'tanggal_input_data' => $request->tanggal_input_data
+          ]);
+
+        return redirect('category');
     }
 
     /**
@@ -56,6 +64,7 @@ class index2Controller extends Controller
     public function show($id)
     {
         //
+        return view('create');
     }
 
     /**
@@ -67,6 +76,8 @@ class index2Controller extends Controller
     public function edit($id)
     {
         //
+        $data = DB::table('kategori')->where('id',$id)->get();
+        return view('edit', compact('data'));
     }
 
     /**
@@ -79,6 +90,13 @@ class index2Controller extends Controller
     public function update(Request $request, $id)
     {
         //
+        DB::table('kategori')->where('id',$id)->update([
+           
+            'nama_kategory' => $request->kategori,
+            'slug' => $request->slug,
+            'tanggal_input_data' => $request->tanggal_input_data
+        ]);
+        return redirect('category');
     }
 
     /**
@@ -90,5 +108,7 @@ class index2Controller extends Controller
     public function destroy($id)
     {
         //
+        DB::table('kategori')->where('id', $id)->delete();
+        return redirect('category');
     }
 }

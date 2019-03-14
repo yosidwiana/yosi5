@@ -11,21 +11,20 @@
 |
 */
 
+
+Route::post('tambahkategori','index2Controller@store');
+Route::get('tambahdata','index2Controller@create');
+Route::get('hapuskategori/{id}','index2Controller@destroy');
+Route::get('editkategori/{id}','index2Controller@edit');
+Route::post('updatekategori/{id}','index2Controller@update');
+
 Route::get('kategori', function () {
     return "hello user with id";
 });
-Route::resource('category', 'index2Controller')->except(['destroy']);
+Route::resource('category', 'index2Controller');
 
 
 Route::get('/lihatdata', 'crud@index')->name('lihatdata');
-
-Route::get('master', function () {
-    return view('dashboard.dashboard');
-});
-
-Route::get('sidebar', function () {
-    return view('layouts.sidebar');
-});
 
 Route::get('dashboard', function () {
     return view('dashboard.index');
@@ -35,3 +34,10 @@ Route::get('dashboard2', function () {
     return view('dashboard.dashboard');
 });
 
+Route::get('create', function () {
+    return view('create');
+});
+
+Route::get('edit', function () {
+    return view('edit');
+});

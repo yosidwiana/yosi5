@@ -29,6 +29,7 @@
                       </span>
                   </div>
               </form>
+              <a href="{{url('tambahdata')}}"> Create </a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -48,8 +49,8 @@
                     <th>{{ $row->slug }}</th>
                     <th>{{ $row->tanggal_input_data }}</th>
                     <th> 
-                        <a href="/id/edit/{{$row->id}}">Edit</a>
-                        <a href="/id/hapus/{{$row->id}}">Hapus</a>
+                        <a href="editkategori/{{$row->id}}">Edit</a>
+                        <a href="hapuskategori/{{$row->id}}">Delete</a>
                     </tr>
                 @endforeach
               </table>

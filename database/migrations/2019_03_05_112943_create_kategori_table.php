@@ -14,7 +14,7 @@ class CreateKategoriTable extends Migration
     public function up()
     {
         Schema::create('kategori', function (Blueprint $table) {
-            $table->integer('id');
+            $table->int('id');
             $table->string('nama_kategory',50);
             $table->string('slug',100);
             $table->string('tanggal_input_data',100);
